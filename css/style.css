@@ -1,1 +1,229 @@
+/* Reset default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
 
+/* Full-screen hero background */
+.login-hero {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to right, #6a11cb, #2575fc);
+}
+
+/* Glassmorphism login card */
+.login-card {
+    background: rgba(255, 255, 255, 0.15);  /* Semi-transparent */
+    backdrop-filter: blur(15px);           /* Blur background */
+    border-radius: 15px;
+    padding: 50px 40px;
+    width: 360px;
+    text-align: center;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* Headings inside card */
+.login-card h2 {
+    color: white;
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.login-card .subtitle {
+    color: #e0e0e0;
+    font-size: 14px;
+    margin-bottom: 30px;
+}
+
+/* Input Groups */
+.input-group {
+    position: relative;
+    margin-bottom: 25px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px 10px;
+    border: none;
+    border-radius: 8px;
+    background: rgba(255,255,255,0.25);
+    color: white;
+    outline: none;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+.input-group label {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    color: rgba(255,255,255,0.7);
+    pointer-events: none;
+    transition: 0.3s ease all;
+}
+
+/* Floating label effect */
+.input-group input:focus + label,
+.input-group input:not(:placeholder-shown) + label {
+    top: -10px;
+    left: 10px;
+    font-size: 12px;
+    color: #fff;
+}
+
+/* Login button */
+button {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    background: #ff4b2b;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 16px;
+    transition: 0.3s ease;
+}
+
+button:hover {
+    background: #ff416c;
+}
+
+/* Registration text */
+.register-text {
+    margin-top: 15px;
+    color: #e0e0e0;
+    font-size: 13px;
+}
+
+.register-text a {
+    color: #fff;
+    text-decoration: underline;
+}
+
+.register-text a:hover {
+    color: #ffeb3b;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {opacity: 0; transform: translateY(-20px);}
+    to {opacity: 1; transform: translateY(0);}
+}
+
+/* Responsive */
+@media(max-width: 400px){
+    .login-card{
+        width: 90%;
+        padding: 40px 20px;
+    }
+}
+
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #007BFF;
+    padding: 15px 30px;
+}
+
+.navbar .logo {
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.navbar .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.navbar .nav-links li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.navbar .nav-links li a:hover {
+    text-decoration: underline;
+}
+
+/* Hero Section */
+.hero {
+    background: url('../images/hero-bg.jpg') center/cover no-repeat;
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    padding: 0 20px;
+}
+
+.hero .btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 25px;
+    background-color: #28a745;
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.hero .btn:hover {
+    background-color: #1e7e34;
+}
+
+/* Features Section */
+.features {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.features h2 {
+    margin-bottom: 40px;
+    font-size: 32px;
+    color: #333;
+}
+
+.feature-cards {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.feature-cards .card {
+    background: white;
+    padding: 20px;
+    width: 250px;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+.feature-cards .card h3 {
+    margin-bottom: 15px;
+    color: #007BFF;
+}
+
+.feature-cards .card p {
+    color: #555;
+}
+
+/* Footer */
+footer {
+    background: #007BFF;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 50px;
+}
