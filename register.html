@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>GlobalHub - Register</title>
   <link rel="stylesheet" href="css/style.css">
-  <!-- Firebase SDK -->
   <script type="module">
     import { initializeApp } from "https://www.gstatic.com/firebasejs/12.2.1/firebase-app.js";
     import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.2.1/firebase-analytics.js";
@@ -30,9 +29,9 @@
 
       registerBtn.addEventListener("click", (e) => {
         e.preventDefault();
-        const email = document.getElementById("registerEmail").value;
-        const password = document.getElementById("registerPassword").value;
-        const confirm = document.getElementById("registerConfirm").value;
+        const email = document.getElementById("email").value;
+        const password = document.getElementById("password").value;
+        const confirm = document.getElementById("confirmPassword").value;
 
         if(password !== confirm){
           alert("Passwords do not match!");
@@ -42,7 +41,7 @@
         createUserWithEmailAndPassword(auth, email, password)
           .then(() => {
             alert("Account created successfully!");
-            window.location.href = "index.html"; // Redirect to login
+            window.location.href = "index.html"; // redirect to login
           })
           .catch((error) => {
             alert(error.message);
@@ -52,15 +51,32 @@
   </script>
 </head>
 <body>
-  <div class="register-container">
-    <h2>Register</h2>
-    <form>
-      <input type="email" id="registerEmail" placeholder="Enter Email" required>
-      <input type="password" id="registerPassword" placeholder="Enter Password" required>
-      <input type="password" id="registerConfirm" placeholder="Confirm Password" required>
+  <div class="login-hero">
+    <div class="login-card">
+      <h2>Register</h2>
+      <p class="subtitle">Create your GlobalHub account</p>
+
+      <div class="input-group">
+        <input type="email" id="email" placeholder=" " required>
+        <label>Email</label>
+      </div>
+
+      <div class="input-group">
+        <input type="password" id="password" placeholder=" " required>
+        <label>Password</label>
+      </div>
+
+      <div class="input-group">
+        <input type="password" id="confirmPassword" placeholder=" " required>
+        <label>Confirm Password</label>
+      </div>
+
       <button id="registerBtn">Register</button>
-    </form>
-    <p>Already have an account? <a href="index.html">Login here</a></p>
+
+      <p class="register-text">
+        Already have an account? <a href="index.html">Login here</a>
+      </p>
+    </div>
   </div>
 </body>
 </html>
