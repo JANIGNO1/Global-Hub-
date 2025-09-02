@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GlobalHub - Login</title>
+
+    <!-- Link to CSS -->
+    <link rel="stylesheet" href="css/style.css">
+
+
+    <!-- Firebase v12+ Modular SDK -->
+    <script type="module">
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/12.2.1/firebase-app.js";
+      import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/12.2.1/firebase-auth.js";
+
+      const firebaseConfig = {
+        apiKey: "AIzaSyD7iBpn20UPzkH-PqfuQ1uoO7CeeToaMnI",
+        authDomain: "global-hub-1b1ca.firebaseapp.com",
+        projectId: "global-hub-1b1ca",
+        storageBucket: "global-hub-1b1ca.firebasestorage.app",
+        messagingSenderId: "801373924500",
+        appId: "1:801373924500:web:89c6a43ce23a12dd531881",
+        measurementId: "G-KGEQQ407D4"
+      };
+
+      // Initialize Firebase
+      const app = initializeApp(firebaseConfig);
+      const auth = getAuth(app);
+
+      // Export auth to use in external script.js
+      window.firebaseAuth = auth;
+    </script>
+
+    <!-- Your custom JS -->
+    <script src="js/script.js" type="module"></script>
+    
+    
+</head>
+<body>
+
+    <!-- Full-screen Login Hero Section -->
+    <div class="login-hero">
+        <!-- Glassmorphism Login Card -->
+        <div class="login-card">
+            <h2>Welcome to GlobalHub</h2>
+            <p class="subtitle">Secure Login to access your dashboard</p>
+
+            <!-- Login Form -->
+            <form id="loginForm">
+                <!-- Email/Username Field -->
+                <div class="input-group">
+                    <input type="email" id="email" name="email" placeholder=" " required>
+                    <label for="email">Email</label>
+                </div>
+
+                <!-- Password Field -->
+                <div class="input-group">
+                    <input type="password" id="password" name="password" placeholder=" " required>
+                    <label for="password">Password</label>
+                </div>
+
+                <!-- Login Button -->
+                <button type="submit">Login</button>
+
+                <!-- Registration Link -->
+                <p class="register-text">Don't have an account? <a href="register.html">Register</a></p>
+            </form>
+        </div>
+    </div>
+
+    <!-- Link to JS -->
+    <script src="js/script.js"></script>
+</body>
+</html>
